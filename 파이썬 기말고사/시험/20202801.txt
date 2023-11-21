@@ -1,0 +1,22 @@
+1번
+답:2 pickle
+
+2번
+답:5 메모장에 저장된 파일, HTML 파일, 파이썬 코드 파일 등은 모두 텍스트 파일이다.
+
+#3번
+import pandas as pd
+import easygui
+from matplotlib import pyplot as plt
+plt.rcParams['font.family'] = 'Gulim'
+
+data_file = easygui.fileopenbox()
+parking = pd.read_csv(data_file)
+
+parking.describe(include='all')
+
+#4번
+parking.plot.hist(y='연장(km)')
+
+#5번
+parking.loc[parking['연장(km)'] > 0.2].loc[parking['비고'] == '체육']

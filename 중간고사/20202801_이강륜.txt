@@ -1,0 +1,50 @@
+1.리스트의 값의 주소를 저장하기 때문이다
+
+
+score = [95, 84, 62, 51, 35, 67, 81, 60 , 14]
+score.sort()
+score_top3 = score[6:]
+print('score =', score, '\nTop3 =', score_top3)
+#score = [14, 35, 51, 60, 62, 67, 81, 84, 95]
+#Top3 = [95, 84, 81]
+
+
+score = [95, 84, 62, 51, 35, 67, 81, 60 , 14]
+score_sum = 0
+score_mean = 0
+for i in score:
+    score_sum += i
+score_mean = score_sum/len(score)
+print('score =', score, '\nMean =', score_mean)
+
+import random
+num = random.randint(0, 9)
+
+result = ''
+num_user = input("0(짝수) 또는 1(홀수)를 입력하세요.")
+for i in (0,10):
+    if num_user == 0:
+        if num % 2 == 0:
+            num += i
+            result = 'O'
+        elif num % 2 == 1:
+            num += i
+            result = 'X'
+    elif num_user == 1:
+        if num % 2 == 1:
+            num += i
+            result = 'O'
+        else:
+            result = 'X'
+print('숫자 =', num, '\n결과 =', result)
+
+
+file_name = "파이썬기초 중간고사.pdf"
+result = ''
+for i in file_name:
+    if i == '.':
+        break
+    result += i
+print('파일 =', file_name, '\n이름 =', result)
+
+

@@ -1,0 +1,23 @@
+import pandas as pd
+import easygui
+
+data_file = easygui.fileopenbox()
+data_file
+
+rendbook = pd.read_csv(data_file, encoding= 'cp949')
+
+from matplotlib import pyplot as plt
+
+plt.rcParams['font.family'] = 'Gulim'
+
+rendbook
+
+rb12 = pd.crosstab(rendbook['대출일자'], 'Freq', colnames=[''])
+rb12
+
+rb12.plot.bar()
+
+rb1224 = rendbook.loc[rendbook['대출일자']=='2021-12-24']
+rb1224
+
+rb1224.to_csv('2021-12-24.csv')
